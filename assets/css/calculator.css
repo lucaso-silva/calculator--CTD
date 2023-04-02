@@ -1,10 +1,20 @@
 .calculator {
-    background-color: var(--bg-color);
     padding: 1em;
     margin: 2em;
     display: flex;
     flex-direction: column;
+    border: .125em solid var(--black);
     border-radius: 10px;
+    position: relative;
+}
+
+.calculator::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-color);
+    z-index: -1;
+    opacity: .8;
 }
 
 .title {
@@ -17,6 +27,7 @@
      padding: .5em .5em 0 0;
      text-align: right;
      background-color: var(--display-color);
+     border: .125em solid var(--black);
      border-radius: 5px;
 }
 
@@ -24,14 +35,10 @@
 .current-operation {
     overflow-wrap: break-word;
     min-height: 1.75em;
-}
-
-.previous-operation {
-    font-size: .85rem;
+    font-size: 1rem;
 }
 
 .current-operation {
-    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -43,17 +50,18 @@
 }
 
 .buttons-container button {
-    border: none;
-    height: 4em;
-    font-size: .95rem;
+    height: 3em;
+    font-size: 1.25rem;
     font-family: var(--main-font);
     font-weight: 400;
     cursor: pointer;
+    border-radius: 50px;
 }
 
 .operation {
     background-color: var(--btn-green);
     font-weight: 800;
+    border: .125em solid var(--operation-active);
 }
 
 .operation:hover {
@@ -62,6 +70,7 @@
 
 .number {
     background-color: var(--number-color);
+    border: .125em solid var(--number-active);
 }
 
 .number:hover  {
@@ -75,4 +84,53 @@
 
 .btn-equals:hover {
     background-color: var(--blue);
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: .95rem;
+    }
+
+    .previous-operation,
+    .current-operation {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .calculator {
+        border: .15em solid var(--black);
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .previous-operation,
+    .current-operation {
+        font-size: 1.25rem;
+    }
+
+    .buttons-container button {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .calculator {
+        border: .2em solid var(--black);
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .previous-operation,
+    .current-operation {
+        font-size: 1.5rem;
+    }
+
+    .buttons-container button {
+        font-size: 1.75rem;
+    }
 }

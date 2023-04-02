@@ -75,3 +75,55 @@ footer a:hover  {
     color: var(--black);
     text-shadow: 1px 2px 2px var(--display-color);
 }
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+   main {
+    width: 60vw;
+    margin: 0 auto;
+   } 
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+        text-shadow: 3px 3px 2px var(--black);
+    }
+
+    header p {
+        font-size: 1.75rem;
+    }
+
+    main {
+        width: 50vw;
+    } 
+
+    footer p {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 2.25rem;
+    }
+
+    main {
+        width: 40vw;
+    } 
+
+    footer p {
+        font-size: 1.5rem;
+    }
+}
