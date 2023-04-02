@@ -1,0 +1,78 @@
+.calculator {
+    background-color: var(--bg-color);
+    padding: 1em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: .75rem;
+    margin-bottom: .75em;
+}
+
+.display {
+     font-family: var(--number-font);
+     padding: .5em .5em 0 0;
+     text-align: right;
+     background-color: var(--display-color);
+     border-radius: 5px;
+}
+
+.previous-operation,
+.current-operation {
+    overflow-wrap: break-word;
+    min-height: 1.75em;
+}
+
+.previous-operation {
+    font-size: .85rem;
+}
+
+.current-operation {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.buttons-container {
+    padding: .75em 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .175em;
+}
+
+.buttons-container button {
+    border: none;
+    height: 4em;
+    font-size: .95rem;
+    font-family: var(--main-font);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.operation {
+    background-color: var(--btn-green);
+    font-weight: 800;
+}
+
+.operation:hover {
+    background-color: var(--operation-active);
+}
+
+.number {
+    background-color: var(--number-color);
+}
+
+.number:hover  {
+    background-color: var(--number-active);
+}
+
+.btn-equals {
+    grid-column: span 2;
+    background-color: var(--display-color);
+}
+
+.btn-equals:hover {
+    background-color: var(--blue);
+}

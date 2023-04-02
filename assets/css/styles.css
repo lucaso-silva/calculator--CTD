@@ -1,0 +1,77 @@
+@import url("./calculator.css");
+
+:root {
+    --main-font: 'Kanit', sans-serif;
+    --number-font: 'Wallpoet', cursive;
+    --bg-color: #4da74d;
+    --display-color: #aeccfa;
+    --blue: #6695e2;
+    --btn-green: #a1daa3;
+    --operation-active: #305c46;
+    --number-color: #F1F1F1;
+    --number-active: #ffff9e;
+    --black: #030303;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/calculus.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    font-family: var(--main-font);
+}
+
+header, footer {    
+    font-family: var(--main-font);
+    text-align: center;
+    padding: 1.25em;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: var(--number-color);
+    font-weight: 500;
+    text-shadow: 1px 2px 2px var(--black);
+    margin-bottom: .25em;
+    text-align: right;
+}
+
+header p {
+    text-align: right;
+}
+
+header::before, footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-color);
+    z-index: -1;
+    opacity: .9;
+}
+
+main {
+    width: 100vw;
+}
+
+footer p {
+    color: var(--number-color);
+    text-shadow: 1px 2px 2px var(--black);
+}
+
+footer a {
+    text-decoration: none;
+    font-family: var(--main-font);
+    cursor: pointer;
+    color: var(--number-color);
+    text-shadow: 1px 2px 2px var(--black);
+}
+
+footer a:hover  {
+    color: var(--black);
+    text-shadow: 1px 2px 2px var(--display-color);
+}
