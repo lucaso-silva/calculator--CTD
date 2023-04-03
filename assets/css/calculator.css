@@ -23,7 +23,7 @@
 }
 
 .display {
-     font-family: var(--number-font);
+     font-family: var(--main-font);
      padding: .5em .5em 0 0;
      text-align: right;
      background-color: var(--display-color);
