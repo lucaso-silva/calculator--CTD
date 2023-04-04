@@ -28,6 +28,14 @@ class Calculator {
   }
 
   processOperation(operation) {
+    if (this.currentOperationText.innerText === "") {
+      if (this.previousOperationText.innerText !== "") {
+        this.changeOperation(operation);
+      }
+
+      return;
+    }
+
     let operationValue;
     const previous = +this.previousOperationText.innerText.split(" ")[0];
     const current = +this.currentOperationText.innerText;
@@ -64,13 +72,24 @@ class Calculator {
     if (operationValue === null) {
       this.currentOperationText.innerText += this.currentOperation;
     } else {
-    if(previous === 0) {
-        operationValue = current
-    }
-    
+      if (previous === 0) {
+        operationValue = current;
+      }
+
       this.previousOperationText.innerText = `${operationValue} ${operation}`;
       this.currentOperationText.innerText = "";
     }
+  }
+
+  changeOperation(operation) {
+    const mathOperations = ["+", "-", "*", "/"];
+
+    if (!mathOperations.includes(operation)) {
+      return;
+    }
+
+    this.previousOperationText.innerText =
+      this.previousOperationText.innerText.slice(0, -1) + operation;
   }
 }
 
