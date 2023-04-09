@@ -28,7 +28,7 @@ class Calculator {
   }
 
   processOperation(operation) {
-    if (this.currentOperationText.innerText === "") {
+    if (this.currentOperationText.innerText === "" && operation !== "C") {
       if (this.previousOperationText.innerText !== "") {
         this.changeOperation(operation);
       }
@@ -57,6 +57,18 @@ class Calculator {
         operationValue = previous / current;
         this.updateScreen(operationValue, operation, current, previous);
         break;
+      case "=":
+        this.equalOperation();
+        break;
+      case "CE":
+        this.clearCurrentOperation();
+        break;
+      case "C":
+        this.clearScreenOperations();
+        break;
+      case "DEL":
+        this.delOperation();
+        break;
       default:
         return;
     }
@@ -68,7 +80,6 @@ class Calculator {
     current = null,
     previous = null
   ) {
-    console.log(operationValue, operation, current, previous);
     if (operationValue === null) {
       this.currentOperationText.innerText += this.currentOperation;
     } else {
@@ -90,6 +101,24 @@ class Calculator {
 
     this.previousOperationText.innerText =
       this.previousOperationText.innerText.slice(0, -1) + operation;
+  }
+
+  delOperation() {
+    this.currentOperationText.innerText = this.currentOperationText.innerText.slice(0, -1);
+  }
+
+  clearCurrentOperation() {
+    this.currentOperationText.innerText = ""
+  }
+
+  clearScreenOperations() {
+    this.currentOperationText.innerText = ""
+    this.previousOperationText.innerText = ""
+  }
+
+  equalOperation() {
+    const operation = this.previousOperationText.innerText.split(" ")[1];
+    this.processOperation(operation);
   }
 }
 

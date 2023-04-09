@@ -43,6 +43,7 @@ h1 {
 
 header p {
     text-align: right;
+    text-shadow: 1px 1px 1px var(--number-color);
 }
 
 header::before, footer::before {
@@ -117,6 +118,7 @@ footer a:hover  {
 
     header p {
         font-size: 2.25rem;
+        text-shadow: 1.75px 1.75px 1px var(--number-color);
     }
 
     main {
