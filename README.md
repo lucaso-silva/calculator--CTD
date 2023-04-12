@@ -56,7 +56,36 @@ class Calculator {
       return;
     }
 ```
+Another important concept to highlight when developing using Classes is the possibility to create specific functions inside the class, these functions are named methods. Through the example above are shown the methods `addDigit()` and `processOperation()`
 
+I also learned to use the `switch` statement, which is a multiway branch statement, providing an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+It’s another way to work with conditions in JavaScript, replacing the use of `if-else`statement.
+```JavaScript
+switch (operation) {
+      case "+":
+        operationValue = previous + current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "-":
+        operationValue = previous - current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "*":
+        operationValue = previous * current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "/":
+        operationValue = previous / current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "=":
+        this.equalOperation();
+        break;
+      case "CE":
+        this.clearCurrentOperation();
+        break;
+```
 
 ---
 ### 🛠️ Continued development
